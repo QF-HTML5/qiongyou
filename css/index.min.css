@@ -1,0 +1,98 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+html {
+    font-size: 100px
+}
+
+body {
+    font-size: .14rem;
+    font-family: 微软雅黑;
+    color: #000
+}
+
+a {
+    text-decoration: none
+}
+
+ol,
+ul {
+    list-style: none
+}
+
+img {
+    border: none
+}
+
+a,
+input,
+textarea {
+    outline: none
+}
+
+textarea {
+    resize: none
+}
+
+.clearfixed:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0
+}
+
+.sweiper {
+    width: 100%;
+    height: 1.875rem;
+    position: relative
+}
+
+.sweiper img {
+    width: 100%;
+    height: 100%
+}
+
+.sweiper .topBar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: .6rem;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, .5), transparent);
+    padding: .15rem;
+    z-index: 1;
+    padding-left: .1rem;
+    padding-top: .15rem
+}
+
+.sweiper .topBar .menu_box {
+    width: .48rem;
+    height: .3rem;
+    display: inline-block
+}
+
+.sweiper .topBar .menu_box .menu {
+    display: block;
+    width: .28rem;
+    height: .3rem
+}
+
+.sweiper .topBar .inp {
+    width: 2.97rem;
+    height: .3rem;
+    border-radius: .15rem;
+    overflow: hidden;
+    position: relative;
+    background-color: rgba(0, 0, 0, .3);
+    color: #fff;
+    text-align: center;
+    line-height: .3rem;
+    border-width: .02rem;
+    text-shadow: none;
+    display: inline-block
+}

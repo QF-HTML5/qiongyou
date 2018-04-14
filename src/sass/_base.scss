@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100px;
+}
+
+body {
+    font-size: 0.14rem;
+    font-family: 微软雅黑;
+    color: #000;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img {
+    border: none;
+}
+
+input,
+textarea,
+a {
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
+
+.clearfixed:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+}
