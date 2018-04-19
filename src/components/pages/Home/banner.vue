@@ -1,12 +1,12 @@
 <template>
     <div class="swiper-container app-banner">
         <div class="swiper-wrapper">
-            <div 
+            <a :href="banner.url"
             v-for = 'banner in banners'
             :key ='banner.id'
             class="swiper-slide">
                 <img width="100%" :src="banner.image" alt="">
-            </div>
+            </a>
         </div>
         <div class="swiper-pagination">
 </div>
