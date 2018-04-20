@@ -2,12 +2,12 @@
     <div class="appFooter">
         <ul>
             <li 
-                v-for='footerList in footerLists' 
+                v-for='(footerList,i ) in footerLists' 
                 :key='footerList.id'
                 @click="footerShowColor = footerList.color"
             >
                 <router-link
-                    :to="footerList.path"
+                    :to="!(i==1)?footerList.path:{name:'log',params:{type:'login'}}"
                 >
                      <i :class="[footerList.footerPic, (footerList.color === footerShowColor?'green':'')]"></i>
                     <span :class="footerList.color === footerShowColor?'green':''">{{footerList.title}}</span>
@@ -27,7 +27,7 @@ export default {
         return {
             footerLists:[
                 {id:1,title:'首页',url:'',footerPic:'fa fa-home',color:'home',path:'/Home'}, 
-                {id:2,title:'发布',url:'',footerPic:'fa fa-plus-circle',color:'fabu',path:'/logIn'},
+                {id:2,title:'发布',url:'',footerPic:'fa fa-plus-circle',color:'fabu',path:'/log',name:'log'},
                 {id:3,title:'我的',url:'',footerPic:'fa fa-user-circle-o',color:'mine',path:'/myMine'}
             ],
             footerShowColor:'home'

@@ -2,32 +2,80 @@
     <div class="logInPub">
         <div class="denglu">        
             <div class="greenTop">
-                <a href="" class="back-btn">
+                <a
+                href="/" class="back-btn"
+                >
                     <i class="iconfont fa fa-angle-left"></i>
                 </a>
-                <span class="logInSpan">登录</span>
+                <span class="logInSpan">{{title[type]}}</span>
             </div>
-        
+            
             <div class="login-wrap"> 
-                <div class="weui-cell">
-                    <input type="text" class="weui-input" placeholder="手机号">
-                </div>
+                <login-inputs v-if="type=='login'" />
+                <forget-inputs v-else-if="type=='forget'" />
+                <zhuce-inputs v-else-if="type== 'zhuce'" />
             </div>
 
-            <a href="" class="btn-deng">{{setAll.title}}</a>
+            <a href="" class="btn-deng">{{title[type]}} </a>
             <div class="small-btns-wrap">
-                <a href="" class="zhu">注册</a>
-                <a href="" class="zhu">忘记密码</a>
+                <router-link :to="{name:'log',params:{type:bottomButton.left.params}}"
+                 class="zhu">{{bottomButton.left.title}}</router-link>
+                <router-link :to="{name:'log',params:{type:bottomButton.right.params}}" class="zhu">{{bottomButton.right.title}}</router-link>
             </div>
         </div>
     </div>
 </template>
 <script>
+import loginInputs from "../../pages/login/login.vue"
+import zhuceInputs from "../../pages/zhuce/zhuce.vue"
+import forgetInputs from "../../pages/forget/forget.vue"
 export default {
     name:'logInPub',
     props:[
-        'setAll'
-    ]
+        'type'
+    ],
+    components:{
+        loginInputs,
+        forgetInputs,
+        zhuceInputs
+    },
+    created(){
+        console.log(this.type)
+    },
+    data(){
+       return {
+           title:{
+               login:"登录",
+               zhuce:"注册",
+               forget:"忘记密码"
+            }
+       } 
+    },
+    computed:{
+        bottomButton(){
+            let value = {
+                left:{},
+                right:{}
+            }
+            if(this.type=="zhuce"){
+                value.left.title = "登录";
+                value.left.params = "login";
+                value.right.title = "找回密码";
+                value.right.params = "forget";
+            }else if(this.type == "login"){
+                value.left.title = "注册";
+                value.left.params = "zhuce";
+                value.right.title = "找回密码";
+                value.right.params = "forget";
+            }else{
+                value.left.title = "注册";
+                value.left.params = "zhuce";
+                value.right.title = "登录";
+                value.right.params = "login";
+            }
+            return value;
+        }
+    }
 }
 </script>
 <style lang="scss" scoped>
@@ -56,34 +104,16 @@ export default {
                 color: #fff;
             }
         }
-        .login-wrap{
-                padding: 10px 15px;
-                border-radius: 3px;
-                display: flex;
-                -webkit-box-align: center;
-                align-items: center;
-            .weui-cell{
-                vertical-align: baseline;
-                background: transparent;
-                width: 3.432rem;
-                height: .52rem;
-                line-height: 0.52rem;
-                background-color: #fff;
-                font-size: 17px;
-                overflow: hidden;
-                .weui-input{
-                    margin-left:0.1rem;
-                    width: 3.132rem;
-                    border: 0;
-                    outline: 0;
-                    -webkit-appearance: none;
-                    background-color: transparent;
-                    font-size: inherit;
-                    color: inherit;
-                    height: 1.47058824em;
-                    line-height: 1.47058824;
-                }
-            }
+       .login-wrap{
+            padding: 10px 15px;
+            border-radius: 3px;
+            width:3.43rem;
+            margin:auto;
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            background: #ffffff;
+
         }
         .btn-deng{
             width: 3.432rem;

@@ -1,6 +1,6 @@
 <template>
     <div class="swiper-container app-banner">
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper img-background">
             <a :href="banner.url"
             v-for = 'banner in banners'
             :key ='banner.id'
@@ -45,7 +45,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+    .swiper-slide,.swiper-wrapper{
+        height:1.44rem;
+    }
 </style>
 
 

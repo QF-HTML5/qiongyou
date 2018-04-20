@@ -5,7 +5,9 @@
             :key="goodsList.id"
         >
             <div class="card-header">
-                <a href="" class="auther">{{goodsList.user.nick_name}}</a>
+                <a href="" class="auther">
+                    {{goodsList.user.nick_name}}
+                </a>
                 <span class="pubtime">发布于{{goodsList.create_time}}</span>
             </div>    
             <div class="card-main">
