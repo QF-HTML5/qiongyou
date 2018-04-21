@@ -16,8 +16,12 @@ Vue.prototype.$http = axios
     // 在webpack中有一个特性，一切皆模块，在这里webpack检测到scss文件之后会编译之后再将其拿出去
 import './stylesheets/main.scss';
 
+import MZUI from './mz-ui'
+import './mz-ui/stylesheets/main.scss'
+Vue.use(MZUI)
 
 
+import "./modules/directive.js"
 /* eslint-disable no-new */
 new Vue({
     el: '#app',
