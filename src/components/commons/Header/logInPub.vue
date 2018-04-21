@@ -75,7 +75,12 @@ export default {
             }
             return value;
         }
+    },
+    
+    updated () {
+        console.log(this.$router.name)
     }
+    
 }
 </script>
 <style lang="scss" scoped>
