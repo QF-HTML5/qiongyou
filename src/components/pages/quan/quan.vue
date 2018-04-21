@@ -37,21 +37,33 @@
 </template>
 
 <script>
+import Vue from "vue"
 export default {
   name:'quanBox',
   data (){
       return {
           quanLists:[],
           page:1,
-          type:4
+          type:4,
+          scrollSwitch:true
+
       }
   },
   methods:{
       getQunan (){
           let {page,type} = this
-          this.$http.post('http://www.taoertao.com/api/alimama/quan'
+          this.$http.post('http://www.taoertao.com/api/alimama/quan',{
+              params:{
+                  page,
+                  type
+              }
+          }
           ).then(res =>{
-              this.quanLists = res.data.data
+              this.page++;
+              this.quanLists = this.quanLists.concat(res.data.data)
+              Vue.nextTick(()=>{
+                  this.scrollSwitch = true;
+              })
           })
       }
   },
@@ -63,8 +75,18 @@ export default {
             }
         }
         
+    },
+    created(){
+        document.body.onscroll = function(){
+            // console.log(document.body.scrollTop)
+            if(document.body.scrollTop >= document.body.offsetHeight - document.documentElement.clientHeight - 10 && this.scrollSwitch){
+                this.getQunan()
+            }
+            this.scrollSwitch = false;
+        }
     }
 }
+
 </script>
 
 <style lang="scss" scoped>
