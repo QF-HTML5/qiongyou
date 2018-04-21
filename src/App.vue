@@ -9,11 +9,11 @@
 <script>
 
 import appFooter from './components/commons/Footer/Footer';
-
+import quanBox from './components/pages/quan/quan'
 export default {
   name: 'App',
   components: {
-    appFooter
+    appFooter,quanBox
   }
 }
 </script>

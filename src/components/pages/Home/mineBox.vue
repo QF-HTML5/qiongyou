@@ -57,9 +57,6 @@ export default {
             })
         }
     },
-    created(){
-
-    },
     watch:{
         type:{
             immediate:true,
@@ -90,7 +87,6 @@ export default {
             .pubtime{
                 text-align:right;
                 width: 1.2rem;
-                display: inline-block;
                 float: right;
                 color: #888;
                 font-size: .14rem;
@@ -112,6 +108,9 @@ export default {
                     display: inline-block;
                     }
                 }
+            }
+            .imgList::-webkit-scrollbar {
+                display: none;
             }
             .goods-info{
                 height: 0.464rem;

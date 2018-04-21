@@ -5,9 +5,11 @@
                 <p class="title-icon nav_header_left">
                    <span>淘二淘-大学生二手网</span>
                 </p>
-                <p class="nav_header_right">
+                <router-link 
+                to='/quanBox'
+                 class="nav_header_right">
                     <i class="fa fa-ticket right"></i>
-                </p>
+                </router-link>
             </div>
         </nav>
       

@@ -8,7 +8,7 @@ import router from './router/index'
 
 Vue.config.productionTip = false
 
-
+import store from './store'
 // 处理axios，让组件通过this.$http来使用
 import axios from 'axios'
 Vue.prototype.$http = axios
@@ -21,6 +21,7 @@ import './stylesheets/main.scss';
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   components: { App },
   template: '<App/>'
