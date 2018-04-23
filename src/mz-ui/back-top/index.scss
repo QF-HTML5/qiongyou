@@ -1,0 +1,29 @@
+.back-top-box {
+    position: fixed;
+    right: 15px;
+    bottom: 60px;
+    background: #11cd6e;
+    border-radius: 50%;
+    .back-top {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: transparent;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &[size=small] {
+        .back-top {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    &[size=large] {
+        .back-top {
+            width: 80px;
+            height: 80px;
+        }
+    }
+}

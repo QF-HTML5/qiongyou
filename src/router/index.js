@@ -14,8 +14,8 @@ import store from "../store"
 console.log(store)
 
 const router = new VueRouter({
-    mode:"history",
-    routes:[
+    mode: "history",
+    routes: [
         //配置路由
         {path:'/quanBox',component:quanBox},
         {path:'',redirect:"/Home"},
@@ -24,6 +24,11 @@ const router = new VueRouter({
        
         {path: '/myMine', component: myMine},
         
+
+        { path: '', redirect: "/Home" },
+        { path: "/Home", component: Home },
+        { path: '/log/:type', name: "log", component: loginPub, props: true },
+        { path: '/myMine', component: myMine },
     ]
 });
 export default router;

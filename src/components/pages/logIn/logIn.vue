@@ -1,7 +1,13 @@
 <template>
  
     <div class="veui-cell">
-        <input v-for='(item,i) in setLogin' :key="i" type="text" :placeholder="item" class="weui-input" >
+        <input
+            v-for='(item,i) in setLogin' 
+            :key="i" 
+            type="text" 
+            :placeholder="item" 
+            class="weui-input" 
+        >
     </div>
 
 </template>
@@ -15,7 +21,7 @@ export default {
                 '密码'
             ]
         }
-    },
+    }
 }
 </script>
 <style lang="scss" scoped>
