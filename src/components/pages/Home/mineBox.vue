@@ -52,6 +52,7 @@ export default {
                     page,type
                 }
             }).then(res =>{
+                page++
                 this.goodsLists = res.data.result.result
                 console.log(res)
             })
